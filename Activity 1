@@ -1,0 +1,31 @@
+var xTi, yTi; //Position of the player in the Canvas.
+var xObject = []; //Position X of the object. 
+var yObject = []; //Position Y of the object. 
+var FalledObjects = 0; //Number of the Falled objects.
+var totalObjects = 10; //Number of the total of the objects in the Canvas, can change later.
+
+
+function setup() {
+  createCanvas(600, 500);
+  xTi = width / 2; //Position of the player in X. 
+  yTi = height - 50; //Position of the playeer in Y. 
+  for (var i = 0; i < totalObject; i++) {
+    xObject[i] = random(width); 
+    yObject[i] = random(-height, 0); 
+} //Spawn Objects in random positions.
+
+function draw() {
+  background(0);
+  fill(120, 200, 80);
+  rect(xTi, yTi, 30, 30);
+  if (yObject[i] > height) 
+    { 
+    xObject[i] = random(width);
+    yObject[i] = random(-height, 0);
+    FalledObjects += 1; //Increase the number of the falled objects.
+}
+}
+}
+
+
+
