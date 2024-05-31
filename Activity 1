@@ -1,9 +1,13 @@
-var xTi, yTi; //Position of the player in the Canvas.
+var xPi, yPi; //Position of the player in the Canvas.
 var xObject = []; //Position X of the object. 
 var yObject = []; //Position Y of the object. 
 var FalledObjects = 0; //Number of the Falled objects.
 var totalObjects = 10; //Number of the total of the objects in the Canvas, can change later.
-
+var Lifes = 3; 
+var sizeObject = 20;
+var vObject = 6;
+var GrowObject = 0;
+var velocidadJugador = 8 ; 
 
 function setup() {
   createCanvas(600, 500);
@@ -13,19 +17,31 @@ function setup() {
     xObject[i] = random(width); 
     yObject[i] = random(-height, 0); 
 } //Spawn Objects in random positions.
-
+}
 function draw() {
   background(0);
   fill(120, 200, 80);
-  rect(xTi, yTi, 30, 30);
+  rect(xPi, yPi, 30, 30);
+  for (var i = 0; i < totalObjetos; i++) {
+    yObject[i] += velocidadObjeto; 
   if (yObject[i] > height) 
     { 
     xObject[i] = random(width);
     yObject[i] = random(-height, 0);
     FalledObjects += 1; //Increase the number of the falled objects.
+  }
+if (dist(xPi, yPi, xObject[i], yObject[i]) < sizeObject) { // 
+  Lifes -= 1; 
+  xObject[i] = random(width); 
+  yObject[i] = random(-height, 0);
+  i (keyIsDown(LEFT_ARROW)) {
+    xTi -= vObject; 
+  } //If the left arrow is pressed, the movement of the player decrease in x.
+  if (keyIsDown(RIGHT_ARROW)) {
+    xTi += vObject; 
+  }//If the left arrow is pressed, the movement of the player increase in x.
 }
 }
 }
-
 
 
